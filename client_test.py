@@ -48,16 +48,13 @@ class ClientTest(unittest.TestCase):
             }
         ]
 
-        price0 = (quotes[0]['top_bid']['price'] + quotes[0]['top_ask']['price']) / 2
-        price1 = (quotes[1]['top_bid']['price'] + quotes[1]['top_ask']['price']) / 2
+        price_a = (quotes[0]['top_bid']['price'] + quotes[0]['top_ask']['price']) / 2
+        price_b = (quotes[1]['top_bid']['price'] + quotes[1]['top_ask']['price']) / 2
 
-        if price1 == 0:
+        if price_b == 0:
             return False
 
-        price0 = (quotes[0]['top_bid']['price'] + quotes[0]['top_ask']['price']) / 2
-        price1 = (quotes[1]['top_bid']['price'] + quotes[1]['top_ask']['price']) / 2
-
-        self.assertEqual(getRatio(price0, price1), price0 / price1)
+        self.assertEqual(getRatio(price_a, price_b), price_a / price_b)
 
 
 if __name__ == '__main__':
